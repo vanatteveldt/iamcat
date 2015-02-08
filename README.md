@@ -2,7 +2,7 @@
 
 This repository contains a simple python wsgi file and settings to automatically create a bootstrap caroussel from a directory containing pictures. 
 
-* [iamcat.py] is a simply wsgi application that reads a directory and makes a twitter bootstrap caroussel with all pictures from that directory
+* [iamcat.py](iamcat.py) is a simply wsgi application that reads a directory and makes a twitter bootstrap caroussel with all pictures from that directory
 * The [uwsgi configuration](upstart_iamcat_uwsgi.conf) starts a uwsgi process that serves [iamcat.py]. It also defines the DOCUMENT_ROOT to point to a hosted folder that contains the picture folder
 * The [nginx configuration](nginx_iamcat.conf) sets up nginx to redirect "/" to the uwsgi server, and simply serve all other files in the DOCUMENT_ROOT. 
 
