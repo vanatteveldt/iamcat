@@ -1,0 +1,46 @@
+<html>
+<head><title>${title}</title>
+<link rel="shortcut icon" type="image/png" href="http://2sisterset1cat.blogspot.nl/favicon.ico" />
+
+<link href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" />
+<style>
+html,body{height:100%;}
+.carousel,.item,.active{height:100%;}
+.carousel-inner{height:100%;}
+</style>
+</head>
+<body>
+
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+% for i, file in enumerate(files):
+    <li data-target="#carousel-example-generic" data-slide-to="${i}" 
+	${' class="active"' if i == 0 else ''}
+	></li>
+% endfor
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+% for i, file in enumerate(files):
+    <div class="item ${'' if i else ' active'}">
+      <img src="${file}">
+    </div>
+% endfor
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</body>
+</html>
